@@ -1,0 +1,16 @@
+name: CurrentDate
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: windows
+    steps:
+    - name: Get Date
+      run: |
+        CURRENTDATETIME=`date +"%A, %b %d, %Y %H:%M:%S"`
+        echo Current Date and Time is: ${CURRENTDATETIME}
